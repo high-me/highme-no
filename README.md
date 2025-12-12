@@ -1,4 +1,4 @@
 <img src="/images/highme-banner.png">
 
-Simpel landing page.<br>
+Simple landing page for my in-game life.<br>
 <a href="https://highme.no">highme.no</a>
