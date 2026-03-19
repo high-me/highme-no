@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta name="google" content="notranslate">
+	<meta charset="UTF-8">
+	<title>highme.no/contact</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="author" content="highme.no">
+	<meta property="og:title" content="highme.no/contact">
+	<meta property="og:url" content="https://highme.no/contact">
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<div id="root"></div>
+	<a href="../" class="back-link">← back</a>
+	
+	<div class="contact-form">
+		<form
+			action="https://formspree.io/f/meokvkyl"
+			method="POST"
+			onsubmit="return validateForm()"
+		>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			
+			<div class="form-group">
+				<label for="message">Message</label>
+				<textarea id="message" name="message" required></textarea>
+			</div>
+			
+			<div class="form-group" style="text-align: left;">
+				<button type="submit" class="send-button">Send</button>
+				<button type="button" class="send-button" onclick="window.location.href='https://highme.no/contact/pgp'">View PGP</button>
+			</div>
+		</form>
+	</div>
+	
+	<script>
+		function validateForm() {
+			const name = document.getElementById('name').value.trim();
+			const email = document.getElementById('email').value.trim();
+			const message = document.getElementById('message').value.trim();
+			
+			// Check if all fields are filled
+			if (!name || !email || !message) {
+				alert('Please fill in all fields.');
+				return false;
+			}
+			
+			// Check if email is valid
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(email)) {
+				alert('Please enter a valid email address.');
+				return false;
+			}
+			
+			// If all validation passes, allow form submission
+			return true;
+		}
+	</script>
+	
+	<div id="footer"><a href="https://highme.no">highme.no</a> <a href="https://highme.no/contact">contact</a> <a href="https://highme.no/privacy">privacy</a></div>
+</body>
+</html> 
